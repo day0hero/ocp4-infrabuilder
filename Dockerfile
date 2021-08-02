@@ -2,7 +2,7 @@ FROM registry.access.redhat.com/ubi8/ubi:8.3
 
 RUN yum update -y && \
 yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
-yum -y install git python2 python3 python3-pip unzip yum-utils bind-utils openssh openssh-clients && \
+yum -y install git python2 python3 python3-pip unzip yum-utils bind-utils tmux openssh openssh-clients && \
 yum -y install jq && \
 yum clean all && \
 pip3 install --upgrade pip --no-cache-dir && \
