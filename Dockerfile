@@ -6,7 +6,7 @@ yum -y install git python2 python3 python3-pip unzip yum-utils bind-utils openss
 yum -y install jq && \
 yum clean all && \
 pip3 install --upgrade pip --no-cache-dir && \
-pip3 install cryptography requests botocore boto3 ansible==2.9.23 --no-cache-dir && \
+pip3 install cryptography requests pyOpenSSL botocore boto3 ansible==2.9.23 --no-cache-dir && \
 (cd /tmp && curl -O https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/4.6.13/openshift-install-linux.tar.gz  && \
  curl -LfO https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/4.6.13/openshift-client-linux.tar.gz) && \
 tar xvf /tmp/openshift-client-linux.tar.gz -C /usr/local/bin/ && \
