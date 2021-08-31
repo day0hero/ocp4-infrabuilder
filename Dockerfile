@@ -20,7 +20,7 @@ unzip /tmp/terraform_0.15.4_linux_amd64.zip -d /usr/local/bin/ && \
 rm -rf /tmp/* && \
 rm -rf ~/.cache && \
 mkdir -p ~/.aws && \
-mkdir -p ~/.ssh && chmod 700 ~/.ssh/ && \
+mkdir -p ~/.ssh && chmod 740 ~/.ssh/ && \
 mkdir -p /etc/ansible 
 
 ADD ./ansible.cfg /etc/ansible/
