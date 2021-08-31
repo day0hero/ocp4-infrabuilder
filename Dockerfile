@@ -1,5 +1,7 @@
 FROM registry.access.redhat.com/ubi8/ubi
 
+env HOME /openshift
+
 RUN yum update -y && \
 yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
 yum -y install git python2 python3 python3-pip podman unzip yum-utils bind-utils openssh openssh-clients && \
