@@ -24,6 +24,7 @@ mkdir -p ~/.ssh && chmod 770 ~/.ssh/ && \
 mkdir -p /etc/ansible && mkdir ~/.ansible && chmod 770 ~/.ansible
 
 ADD ./ansible.cfg /etc/ansible/
+ADD ./ansible.cfg $HOME/ansible.cfg
 
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
 unzip awscliv2.zip && \
