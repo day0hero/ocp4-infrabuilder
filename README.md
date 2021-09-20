@@ -13,5 +13,9 @@ pip libraries:
 - ansible
 - boto3
 - botocore
+- pyOpenSSL
+- passlib
 
-The awscli is also installed. 
+Cloud CLI:
+- AWS
+- Azure
