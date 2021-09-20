@@ -2,6 +2,8 @@ FROM registry.access.redhat.com/ubi8/ubi
 
 env HOME /openshift
 
+ADD ./azure.repo /etc/yum.repos.d/
+
 RUN yum update -y && \
 yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm && \
 yum -y install git python2 python3 python3-pip podman unzip yum-utils bind-utils openssh openssh-clients && \
@@ -17,9 +19,12 @@ tar xvf /tmp/openshift-install-linux.tar.gz -C /usr/local/bin && \
 tar -zxvf /tmp/helm-v3.4.1-linux-amd64.tar.gz && chmod +x linux-amd64/helm && mv linux-amd64/helm /usr/local/bin/helm && \
 (cd /tmp && curl -LfO https://releases.hashicorp.com/terraform/0.15.4/terraform_0.15.4_linux_amd64.zip) && \
 unzip /tmp/terraform_0.15.4_linux_amd64.zip -d /usr/local/bin/ && \
+rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
+yum -y install azure-cli && \
+yum clean all && \
 rm -rf /tmp/* && \
 rm -rf ~/.cache && \
-mkdir -p ~/.aws && \
+mkdir -p ~/.aws && mkdir -p ~/.azure && \
 mkdir -p ~/.ssh && chmod 770 ~/.ssh/ && \
 mkdir -p /etc/ansible && mkdir ~/.ansible && chmod 770 ~/.ansible
 
