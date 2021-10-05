@@ -21,6 +21,7 @@ tar -zxvf /tmp/helm-v3.4.1-linux-amd64.tar.gz && chmod +x linux-amd64/helm && mv
 unzip /tmp/terraform_0.15.4_linux_amd64.zip -d /usr/local/bin/ && \
 rpm --import https://packages.microsoft.com/keys/microsoft.asc && \
 yum -y install azure-cli && \
+ansible-galaxy collection install containers.podman && \
 yum clean all && \
 rm -rf /tmp/* && \
 rm -rf ~/.cache && \
