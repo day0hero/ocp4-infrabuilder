@@ -25,6 +25,7 @@ ansible-galaxy collection install containers.podman && \
 yum clean all && \
 rm -rf /tmp/* && \
 rm -rf ~/.cache && \
+chmod 770 /openshift && \
 chmod 770 ~/.ansible && \
 mkdir -p ~/.aws && mkdir -p ~/.azure && \
 mkdir -p ~/.ssh && chmod 770 ~/.ssh/ 
