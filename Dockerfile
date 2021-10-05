@@ -26,7 +26,7 @@ yum clean all && \
 rm -rf /tmp/* && \
 rm -rf ~/.cache && \
 mkdir -p ~/.aws && mkdir -p ~/.azure && \
-mkdir -p ~/.ssh && chmod 770 ~/.ssh/ && \
+mkdir -p ~/.ssh && chmod 770 ~/.ssh/ 
 
 ADD ./ansible.cfg /etc/ansible/
 ADD ./ansible.cfg $HOME/ansible.cfg
