@@ -27,7 +27,6 @@ rm -rf /tmp/* && \
 rm -rf ~/.cache && \
 mkdir -p ~/.aws && mkdir -p ~/.azure && \
 mkdir -p ~/.ssh && chmod 770 ~/.ssh/ && \
-mkdir -p /etc/ansible && mkdir ~/.ansible && chmod 770 ~/.ansible
 
 ADD ./ansible.cfg /etc/ansible/
 ADD ./ansible.cfg $HOME/ansible.cfg
